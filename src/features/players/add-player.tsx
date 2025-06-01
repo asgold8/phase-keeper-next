@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { useState } from "react";
-import { setScore } from "@/lib/features/score-slice";
+import { useState } from "react";
+import { addPlayer } from "@/lib/features/game-slice";
 import { useAppDispatch } from "@/lib/hooks";
 
 const AddPlayer = () => {
@@ -10,10 +9,13 @@ const AddPlayer = () => {
 
   const dispatch = useAppDispatch();
 
+  // TODO: add max # of players validation
+  // TODO: add max length validation for player name
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!playerName.trim()) return;
-    dispatch(setScore({ key: playerName, value: { score: 0 } }));
+    dispatch(addPlayer(playerName));
     setPlayerName("");
   };
 

@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import scoreReducer from "./features/score-slice";
+import gameReducer from "./features/game-slice";
 // Ensure that scoreReducer is a valid reducer function exported as default from score-slice.ts
 
 const rootReducer = combineReducers({
-  score: scoreReducer,
+  game: gameReducer,
 });
 
 export const makeStore = () => {
