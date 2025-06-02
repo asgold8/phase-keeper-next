@@ -1,3 +1,5 @@
+import TableContainer from "@/components/table-container";
+import Table from "@/components/table";
 import { useAppSelector } from "@/lib/hooks";
 
 const RoundList = () => {
@@ -7,15 +9,15 @@ const RoundList = () => {
   const playerNames = Object.keys(players) ?? [];
 
   return (
-    <div className="flex flex-col w-full h-full max-w-full border-2 border-indigo-700 rounded-md p">
-      <table className="min-w-full border-4 border-indigo-700 rounded-lg overflow-hidden">
+    <TableContainer>
+      <Table>
         <thead className="bg-indigo-100 ">
           <tr>
             <th />
             {playerNames.map((playerName) => (
               <th
                 key={playerName}
-                className="border border-indigo-300 px-4 py-2 font-semibold text-indigo-700 border-b"
+                className="border-b border-l border-indigo-300 px-4 py-2 font-semibold text-indigo-700 "
               >
                 {playerName}
               </th>
@@ -25,14 +27,14 @@ const RoundList = () => {
         <tbody>
           {Object.entries(rounds).map(([roundNumber, round]) => (
             <tr key={roundNumber} className="even:bg-indigo-50">
-              <td className="border border-indigo-300 px-4 py-2 border-b font-medium text-indigo-800">
+              <td className="border-t border-indigo-300 px-4 py-2 border-b font-medium text-indigo-800">
                 {roundNumber}
               </td>
               {round.map((playerRound) => {
                 return (
                   <td
                     key={playerRound.playerName}
-                    className="px-4 py-2 border border-indigo-300 text-center"
+                    className="px-4 py-2 border-l border-t border-indigo-300 text-center"
                   >
                     {playerRound.finishedPhase ? (
                       <input
@@ -53,12 +55,10 @@ const RoundList = () => {
             </tr>
           ))}
           <tr key="total" className="bg-indigo-100">
-            <td className="border border-indigo-300 text-indigo-700 px-4 py-2 font-semibold">
-              Total
-            </td>
+            <td className="text-indigo-700 px-4 py-2 font-semibold">Total</td>
             {Object.entries(players).map(([playerName, player]) => (
               <td
-                className="border border-indigo-300 text-center text-indigo-700 font-semibold"
+                className="border-l border-t border-indigo-300 text-center text-indigo-700 font-semibold"
                 key={`${playerName}-total`}
               >
                 {player.totalScore}
@@ -66,8 +66,8 @@ const RoundList = () => {
             ))}
           </tr>
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </TableContainer>
   );
 };
 

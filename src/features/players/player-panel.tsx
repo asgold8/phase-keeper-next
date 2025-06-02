@@ -7,11 +7,13 @@ const PlayerPanel = ({ onStartGame }: { onStartGame: () => void }) => {
   const players = useAppSelector((state) => state.game.players) ?? {};
   const playerNames = Object.keys(players) ?? [];
   const minPlayers = 2;
+  const maxPlayers = 6;
   const isGameReady = playerNames.length >= minPlayers;
+  const disableAddPlayer = playerNames.length >= maxPlayers;
 
   return (
     <div>
-      <AddPlayer />
+      <AddPlayer disabled={disableAddPlayer} />
       <PlayerList />
       <button
         disabled={!isGameReady}

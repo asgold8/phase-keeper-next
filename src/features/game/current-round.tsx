@@ -4,6 +4,8 @@ import { saveRound } from "@/lib/features/game-slice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { useState } from "react";
 import { PlayerRound } from "@/types/game.types";
+import TableContainer from "@/components/table-container";
+import Table from "@/components/table";
 
 const CurrentRound = () => {
   const dispatch = useAppDispatch();
@@ -19,6 +21,11 @@ const CurrentRound = () => {
     if (roundNumbers.length === 0) return 1;
     return Math.max(...roundNumbers) + 1;
   });
+
+  const currentDealer =
+    playerNames.length > 0
+      ? playerNames[(currentRoundNumber - 1) % playerNames.length]
+      : "";
 
   const initialRoundDataState = playerNames.map((playerName) => ({
     playerName: playerName,
@@ -64,19 +71,22 @@ const CurrentRound = () => {
 
   return (
     <div className="flex flex-col w-full h-full max-w-full mb-4 border-2 border-indigo-700 rounded-md p-4">
-      <h2 className="text-md font-semibold mb-4">{`Round ${currentRoundNumber}`}</h2>
-      <div className="flex-1 overflow-x-auto">
-        <table className="min-w-full w-full border-collapse table-fixed">
-          <thead>
+      <h2 className="text-md text-indigo-700 font-bold mb-4">{`Round ${currentRoundNumber}`}</h2>
+      <TableContainer>
+        <Table>
+          <thead className="bg-indigo-100 ">
             <tr>
               {Object.entries(players).map(([playerName, player]) => (
                 <th
                   key={playerName}
-                  className="px-4 py-2 border border-gray-300 bg-gray-100 text-gray-800 font-semibold"
+                  className="border border-indigo-300 px-4 py-2 font-semibold text-indigo-700 border-b align-bottom"
                 >
                   <div>
-                    <div className="truncate">{playerName}</div>
-                    <div className="text-xs text-gray-600">
+                    <div className="text-xs text-green-700 underline">
+                      {playerName === currentDealer ? "Dealer" : ""}
+                    </div>
+                    <div>{playerName}</div>
+                    <div className="text-xs text-indigo-600">
                       {player.phase ? `Phase ${player.phase}` : "Phase 1"}
                     </div>
                   </div>
@@ -89,7 +99,7 @@ const CurrentRound = () => {
               {playerNames.map((playerName) => (
                 <td
                   key={playerName}
-                  className="px-4 py-2 border border-gray-300 align-top"
+                  className="px-4 py-2 border border-indigo-300 align-top border-b"
                 >
                   <label className="inline-flex space-x-2 mb-2">
                     <span className="text-sm">Finished phase?</span>
@@ -118,8 +128,8 @@ const CurrentRound = () => {
               ))}
             </tr>
           </tbody>
-        </table>
-      </div>
+        </Table>
+      </TableContainer>
       <div className="mt-6 flex justify-end">
         <button
           className="bg-indigo-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 hover:cursor-pointer transition"
