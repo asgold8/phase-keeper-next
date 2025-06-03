@@ -50,6 +50,27 @@ const gameSlice = createSlice({
         });
       }
     },
+    removeRound: (state, action) => {
+      const roundNumber = action.payload;
+      const round = state.rounds[roundNumber];
+      if (roundNumber && round) {
+        Object.keys(state.players).forEach((playerName) => {
+          const player = state.players[playerName];
+          if (player) {
+            const playerRound = round.find(
+              (r: PlayerRound) => r.playerName === playerName
+            );
+            if (playerRound) {
+              if (playerRound.finishedPhase) {
+                player.phase -= 1;
+              }
+              player.totalScore -= playerRound.score;
+            }
+          }
+        });
+        delete state.rounds[roundNumber];
+      }
+    },
     endGame: () => initialState,
     resetScores: (state) => {
       state.rounds = {};
@@ -64,6 +85,7 @@ export const {
   addPlayer,
   removePlayer,
   saveRound,
+  removeRound,
   setScore,
   endGame,
   resetScores,
