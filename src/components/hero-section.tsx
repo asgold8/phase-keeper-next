@@ -1,27 +1,22 @@
 import React from "react";
 
 const HeroSection = ({ onGetStarted }: { onGetStarted: () => void }) => (
-  <section className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-20">
-    <div className="container mx-auto px-4 text-center">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to</h1>
-      <h1 className="text-4xl md:text-6xl font-bold mb-4">
-        Phase Score Keeper
-      </h1>
-      <p className="text-lg md:text-2xl mb-8">
-        Keep track of your score in your favorite card game!
-      </p>
-      <a
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          onGetStarted();
-        }}
-        className="inline-block bg-white text-blue-600 font-semibold px-8 py-3 rounded-full shadow hover:bg-gray-100 transition"
-      >
-        Get Started
-      </a>
+    <div className="min-h-screen flex items-center justify-center px-4">
+        <div className="relative z-10 text-center">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-8 underline decoration-[3px] underline-offset-[10px]">
+                Phase Score Keeper
+            </h1>
+            <p className="text-lg md:text-2xl text-white mb-10">
+                Keep track of your score in your favorite card game!
+            </p>
+            <button
+                onClick={onGetStarted}
+                className="bg-yellow-300 text-blue-900 font-bold px-10 py-3 rounded-full hover:bg-yellow-400 transition cursor-pointer"
+            >
+                Get Started
+            </button>
+        </div>
     </div>
-  </section>
 );
 
 export default HeroSection;
