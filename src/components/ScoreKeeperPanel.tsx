@@ -19,7 +19,11 @@ const ScoreKeeperPanel = () => {
       <h1 className="text-5xl font-extrabold text-white text-center underline decoration-[3px] underline-offset-[10px] mb-10">
         Phase Score Keeper
       </h1>
-      <div className="border border-white rounded-2xl p-8 w-full max-w-md">
+      <div
+        className={`border border-white rounded-2xl p-8 w-full ${
+          gameStart ? "max-w-5xl" : "max-w-md"
+        }`}
+      >
         {gameStart ? (
           <GamePanel onEndGame={() => handleEndGame()} />
         ) : (
