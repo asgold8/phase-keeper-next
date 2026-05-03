@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 
-import PlayerPanel from "@/features/players/player-panel";
-import GamePanel from "@/features/game/game-panel";
+import PlayerPanel from "@/features/players/PlayerPanel";
+import GamePanel from "@/features/game/GamePanel";
 import { useAppDispatch } from "@/lib/hooks";
 import { resetScores } from "@/lib/features/game-slice";
 

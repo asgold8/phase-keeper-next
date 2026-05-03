@@ -4,8 +4,8 @@ import { saveRound } from "@/lib/features/game-slice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { useState } from "react";
 import { PlayerRound } from "@/types/game.types";
-import TableContainer from "@/components/table-container";
-import Table from "@/components/table";
+import TableContainer from "@/components/TableContainer";
+import Table from "@/components/Table";
 
 const CurrentRound = () => {
   const dispatch = useAppDispatch();

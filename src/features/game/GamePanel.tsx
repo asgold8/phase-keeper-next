@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { useAppSelector } from "@/lib/hooks";
-import CurrentRound from "./current-round";
-import RoundList from "./round-list";
-import PhasesModal from "./phases-modal";
+import CurrentRound from "./CurrentRound";
+import RoundList from "./RoundList";
+import PhasesModal from "./PhasesModal";
 
 const GamePanel = ({ onEndGame }: { onEndGame: () => void }) => {
   const rounds = useAppSelector((state) => state.game.rounds) ?? {};

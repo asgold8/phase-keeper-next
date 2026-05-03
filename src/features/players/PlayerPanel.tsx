@@ -1,6 +1,6 @@
 import React from "react";
-import AddPlayer from "./add-player";
-import PlayerList from "./player-list";
+import AddPlayer from "./AddPlayer";
+import PlayerList from "./PlayerList";
 import { useAppSelector } from "@/lib/hooks";
 
 const PlayerPanel = ({ onStartGame }: { onStartGame: () => void }) => {

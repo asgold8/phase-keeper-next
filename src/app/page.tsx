@@ -1,7 +1,7 @@
 "use client";
 
-import HeroSection from "@/components/hero-section";
-import ScoreKeeperPanel from "@/components/score-keeper-panel";
+import HeroSection from "@/components/HeroSection";
+import ScoreKeeperPanel from "@/components/ScoreKeeperPanel";
 import { useState } from "react";
 
 export default function Home() {

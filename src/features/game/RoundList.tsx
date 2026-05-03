@@ -1,5 +1,5 @@
-import TableContainer from "@/components/table-container";
-import Table from "@/components/table";
+import TableContainer from "@/components/TableContainer";
+import Table from "@/components/Table";
 import { useAppSelector, useAppDispatch } from "@/lib/hooks";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import { removeRound } from "@/lib/features/game-slice";
