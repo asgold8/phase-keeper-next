@@ -15,12 +15,17 @@ const ScoreKeeperPanel = () => {
     dispatch(resetScores());
   };
   return (
-    <div className="border border-indigo-600 rounded-lg p-4 w-full">
-      {gameStart ? (
-        <GamePanel onEndGame={() => handleEndGame()} />
-      ) : (
-        <PlayerPanel onStartGame={() => setGameStart(true)} />
-      )}
+    <div className="min-h-screen flex flex-col items-center px-4 pt-12">
+      <h1 className="text-5xl font-extrabold text-white text-center underline decoration-[3px] underline-offset-[10px] mb-10">
+        Phase Score Keeper
+      </h1>
+      <div className="border border-white rounded-2xl p-8 w-full max-w-md">
+        {gameStart ? (
+          <GamePanel onEndGame={() => handleEndGame()} />
+        ) : (
+          <PlayerPanel onStartGame={() => setGameStart(true)} />
+        )}
+      </div>
     </div>
   );
 };

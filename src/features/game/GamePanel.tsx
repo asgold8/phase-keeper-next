@@ -13,7 +13,6 @@ const GamePanel = ({ onEndGame }: { onEndGame: () => void }) => {
 
   return (
     <div>
-      <h2 className="text-xl text-indigo-700 font-bold">Phase Score Keeper</h2>
       <button
         className="hover:cursor-pointer mt-2 mb-2 bg-indigo-600 text-white px-2 py rounded hover:bg-indigo-700 transition"
         onClick={() => setShowPhasesModal(true)}
