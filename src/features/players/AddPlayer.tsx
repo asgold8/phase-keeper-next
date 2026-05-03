@@ -43,7 +43,7 @@ const AddPlayer: React.FC<AddPlayerProps> = (props) => {
       />
       <button
         type="submit"
-        className="bg-yellow-300 text-blue-900 font-bold px-5 py-2 rounded hover:bg-yellow-400 disabled:bg-gray-200 disabled:text-gray-400 cursor-pointer transition"
+        className="btn-primary px-5 py-2 rounded"
         disabled={disabled}
       >
         Add

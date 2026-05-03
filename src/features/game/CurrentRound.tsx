@@ -70,23 +70,23 @@ const CurrentRound = () => {
   };
 
   return (
-    <div className="flex flex-col w-full h-full max-w-full mb-4 border-2 border-indigo-700 rounded-md p-4">
-      <h2 className="text-md text-indigo-700 font-bold mb-4">{`Round ${currentRoundNumber}`}</h2>
+    <div className="flex flex-col w-full h-full max-w-full mb-4 border-2 border-white rounded-md p-4">
+      <h2 className="text-md text-white font-bold mb-4">{`Round ${currentRoundNumber}`}</h2>
       <TableContainer>
         <Table>
-          <thead className="bg-indigo-100 ">
+          <thead className="bg-blue-100 ">
             <tr>
               {Object.entries(players).map(([playerName, player]) => (
                 <th
                   key={playerName}
-                  className="border border-indigo-300 px-4 py-2 font-semibold text-indigo-700 border-b align-bottom"
+                  className="border border-blue-300 px-4 py-2 font-semibold text-blue-700 border-b align-bottom"
                 >
                   <div>
                     <div className="text-xs text-green-700 underline">
                       {playerName === currentDealer ? "Dealer" : ""}
                     </div>
                     <div>{playerName}</div>
-                    <div className="text-xs text-indigo-600">
+                    <div className="text-xs text-blue-600">
                       {player.phase ? `Phase ${player.phase}` : "Phase 1"}
                     </div>
                   </div>
@@ -101,7 +101,7 @@ const CurrentRound = () => {
                   key={playerName}
                   className="px-4 py-2 border border-indigo-300 align-top border-b"
                 >
-                  <label className="inline-flex space-x-2 mb-2">
+                  <label className="flex items-center space-x-2 mb-2">
                     <span className="text-sm">Finished phase?</span>
                     <input
                       type="checkbox"
@@ -113,7 +113,7 @@ const CurrentRound = () => {
                       className="form-checkbox h-4 w-4 text-blue-600"
                     />
                   </label>
-                  <label className="inline-flex items-center space-x-2">
+                  <label className="flex items-center space-x-2">
                     <span className="text-sm">Score:</span>
                     <input
                       type="text"
@@ -132,7 +132,7 @@ const CurrentRound = () => {
       </TableContainer>
       <div className="mt-6 flex justify-end">
         <button
-          className="bg-indigo-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 hover:cursor-pointer transition"
+          className="btn-primary px-6 py-2 rounded"
           onClick={() => handleSave()}
         >
           Save Round

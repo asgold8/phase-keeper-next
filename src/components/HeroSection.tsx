@@ -11,7 +11,7 @@ const HeroSection = ({ onGetStarted }: { onGetStarted: () => void }) => (
             </p>
             <button
                 onClick={onGetStarted}
-                className="bg-yellow-300 text-blue-900 font-bold px-10 py-3 rounded-full hover:bg-yellow-400 transition cursor-pointer"
+                className="btn-primary px-10 py-3 rounded-full"
             >
                 Get Started
             </button>

@@ -14,7 +14,7 @@ const GamePanel = ({ onEndGame }: { onEndGame: () => void }) => {
   return (
     <div>
       <button
-        className="hover:cursor-pointer mt-2 mb-2 bg-indigo-600 text-white px-2 py rounded hover:bg-indigo-700 transition"
+        className="hover:cursor-pointer mt-2 mb-2 bg-blue-500 text-white px-2 py rounded hover:bg-blue-600 transition"
         onClick={() => setShowPhasesModal(true)}
       >
         Phases Reference
