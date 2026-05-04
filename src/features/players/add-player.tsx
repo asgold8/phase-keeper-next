@@ -27,7 +27,7 @@ const AddPlayer: React.FC<AddPlayerProps> = (props) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-row items-center gap-2 w-full"
+      className="flex flex-row items-center gap-2 w-full max-w-sm"
     >
       <input
         id="playerName"
@@ -37,13 +37,13 @@ const AddPlayer: React.FC<AddPlayerProps> = (props) => {
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setPlayerName(e.target.value)
         }
-        className="bg-white border border-gray-300 px-3 py-2 rounded w-full text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:text-gray-400 transition"
+        className="border border-gray-300 px-3 py-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-50 disabled:text-gray-500 disabled:shadow-none transition"
         placeholder="Enter player name"
         required
       />
       <button
         type="submit"
-        className="btn-primary px-5 py-2 rounded"
+        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:bg-gray-50 disabled:text-gray-500 disabled:shadow-none transition"
         disabled={disabled}
       >
         Add

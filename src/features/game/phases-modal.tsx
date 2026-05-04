@@ -25,16 +25,16 @@ const PhasesModal = ({ open, onClose }: PhasesModalProps) => {
     >
       <div className="bg-blue-100 rounded-lg shadow-lg w-full max-w-md p-6">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold text-blue-700">Game Phases</h2>
+          <h2 className="text-2xl font-bold text-indigo-700">Game Phases</h2>
           <button
             onClick={onClose}
-            className="text-blue-500 hover:text-blue-700 text-xl font-bold hover:cursor-pointer"
+            className="text-indigo-500 hover:text-indigo-700 text-xl font-bold hover:cursor-pointer"
             aria-label="Close"
           >
             &times;
           </button>
         </div>
-        <ul className="list-inside space-y-2 text-blue-600">
+        <ul className="list-inside space-y-2 text-indigo-600">
           {phases.map((phase, idx) => (
             <li key={idx} className="font-medium">
               {phase}
