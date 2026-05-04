@@ -1,6 +1,6 @@
 import React from "react";
-import AddPlayer from "./add-player";
-import PlayerList from "./player-list";
+import AddPlayer from "./AddPlayer";
+import PlayerList from "./PlayerList";
 import { useAppSelector } from "@/lib/hooks";
 
 const PlayerPanel = ({ onStartGame }: { onStartGame: () => void }) => {
@@ -13,12 +13,18 @@ const PlayerPanel = ({ onStartGame }: { onStartGame: () => void }) => {
 
   return (
     <div>
+      <h2 className="text-2xl font-bold text-white mb-1">Name your players:</h2>
+      <p className="text-white text-sm mb-4">Please add 2 - 6 players.</p>
       <AddPlayer disabled={disableAddPlayer} />
       <PlayerList />
       <button
         disabled={!isGameReady}
         onClick={onStartGame}
-        className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:bg-gray-50 disabled:text-gray-500 disabled:shadow-none transition"
+        className={`mt-6 px-4 py-2 rounded font-semibold transition ${
+          isGameReady
+            ? "bg-green-700 text-white hover:bg-green-800 cursor-pointer"
+            : "bg-white/90 text-gray-500"
+        }`}
       >
         Start Game
       </button>

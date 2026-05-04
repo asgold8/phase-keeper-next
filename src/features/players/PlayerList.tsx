@@ -1,5 +1,6 @@
 import { removePlayer } from "@/lib/features/game-slice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 const PlayerList = () => {
   const dispatch = useAppDispatch();
@@ -15,21 +16,20 @@ const PlayerList = () => {
 
   const playerNames = Object.keys(players) ?? [];
   return (
-    <ul>
+    <ul className="mt-4 flex flex-col items-start gap-2">
       {playerNames.map((playerName: string) => (
         <li
           key={playerName}
-          className="mt-2 py-1 rounded-full bg-blue-100 text-blue-800 font-medium text-sm shadow-sm"
-          style={{ minWidth: 0, width: "fit-content" }}
+          className="inline-flex items-center gap-2 pl-4 pr-2 py-1 rounded-full bg-blue-500 text-white font-medium text-sm"
         >
-          <span className="inline-block px-3">{playerName}</span>
+          <span>{playerName}</span>
           <button
             type="button"
-            className="px-3 text-indigo-500 hover:text-indigo-700 font-bold rounded-full hover:cursor-pointer"
+            className="flex items-center justify-center w-5 h-5 rounded-full text-white hover:bg-white/20 cursor-pointer"
             aria-label={`Remove ${playerName}`}
             onClick={() => handleRemovePlayer(playerName)}
           >
-            X
+            <XMarkIcon className="w-4 h-4" />
           </button>
         </li>
       ))}

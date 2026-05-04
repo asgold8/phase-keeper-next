@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { useAppSelector } from "@/lib/hooks";
-import CurrentRound from "./current-round";
-import RoundList from "./round-list";
-import PhasesModal from "./phases-modal";
+import CurrentRound from "./CurrentRound";
+import RoundList from "./RoundList";
+import PhasesModal from "./PhasesModal";
 
 const GamePanel = ({ onEndGame }: { onEndGame: () => void }) => {
   const rounds = useAppSelector((state) => state.game.rounds) ?? {};
@@ -13,9 +13,8 @@ const GamePanel = ({ onEndGame }: { onEndGame: () => void }) => {
 
   return (
     <div>
-      <h2 className="text-xl text-indigo-700 font-bold">Phase Score Keeper</h2>
       <button
-        className="hover:cursor-pointer mt-2 mb-2 bg-indigo-600 text-white px-2 py rounded hover:bg-indigo-700 transition"
+        className="hover:cursor-pointer mt-2 mb-2 bg-blue-500 text-white px-2 py rounded hover:bg-blue-600 transition"
         onClick={() => setShowPhasesModal(true)}
       >
         Phases Reference
