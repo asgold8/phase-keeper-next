@@ -31,8 +31,8 @@ export default function RootLayout({
       >
         <StoreProvider>
           <div className="relative min-h-screen w-full bg-[#0a2c8c] overflow-hidden">
-            {children}
             <Stripes />
+            {children}
           </div>
         </StoreProvider>
       </body>
