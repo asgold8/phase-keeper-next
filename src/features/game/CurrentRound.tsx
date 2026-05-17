@@ -112,7 +112,8 @@ const CurrentRound = () => {
                 <input
                   type="number"
                   inputMode="numeric"
-                  value={roundData[idx]?.score ?? ""}
+                  placeholder="0"
+                  value={roundData[idx]?.score || ""}
                   onChange={(event) => handleScoreChange(playerName, event)}
                   className="w-14 px-1 py-1 border rounded bg-white text-blue-900"
                 />
@@ -169,8 +170,9 @@ const CurrentRound = () => {
                       <span className="text-sm">Score:</span>
                       <input
                         type="text"
+                        placeholder="0"
                         value={
-                          roundData[playerNames.indexOf(playerName)]?.score ?? ""
+                          roundData[playerNames.indexOf(playerName)]?.score || ""
                         }
                         onChange={(event) => handleScoreChange(playerName, event)}
                         className="w-16 px-1 py-0.5 border rounded"
