@@ -15,12 +15,12 @@ const ScoreKeeperPanel = () => {
     dispatch(resetScores());
   };
   return (
-    <div className="min-h-screen flex flex-col items-center px-4 pt-12">
-      <h1 className="text-5xl font-extrabold text-white text-center underline decoration-[3px] underline-offset-[10px] mb-10">
+    <div className="min-h-screen flex flex-col items-center px-2 sm:px-4 pt-6 sm:pt-12">
+      <h1 className="text-3xl sm:text-5xl font-extrabold text-white text-center underline decoration-[3px] underline-offset-[6px] sm:underline-offset-[10px] mb-6 sm:mb-10">
         Phase Score Keeper
       </h1>
       <div
-        className={`border border-white rounded-2xl p-8 w-full bg-white/5 backdrop-blur-md ${gameStart ? "max-w-5xl" : "max-w-md"
+        className={`border border-white rounded-2xl p-3 sm:p-8 w-full bg-white/5 backdrop-blur-md ${gameStart ? "max-w-5xl" : "max-w-md"
           }`}
       >
         {gameStart ? (

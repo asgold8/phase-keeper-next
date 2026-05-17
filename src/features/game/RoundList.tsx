@@ -20,30 +20,30 @@ const RoundList = () => {
       <Table>
         <thead className="bg-blue-100 ">
           <tr>
-            <th />
+            <th className="w-6" />
             {playerNames.map((playerName) => (
               <th
                 key={playerName}
-                className="border-b border-l border-blue-300 px-4 py-2 font-semibold text-blue-700 "
+                className="border-b border-l border-blue-300 px-2 sm:px-4 py-2 font-semibold text-blue-700 text-sm sm:text-base"
               >
                 {playerName}
               </th>
             ))}
-            <th />
+            <th className="w-6" />
           </tr>
         </thead>
         <tbody>
           {Object.entries(rounds).map(
             ([roundNumber, round], index, roundArray) => (
               <tr key={roundNumber} className="even:bg-blue-50 odd:bg-blue-300">
-                <td className="border-t border-blue-300 px-4 py-2 border-b font-medium text-blue-800">
+                <td className="border-t border-blue-300 px-2 sm:px-4 py-2 border-b font-medium text-blue-800 text-sm sm:text-base">
                   {roundNumber}
                 </td>
                 {round.map((playerRound) => {
                   return (
                     <td
                       key={playerRound.playerName}
-                      className="px-4 py-2 border-l border-t border-blue-300 text-center"
+                      className="px-1 sm:px-4 py-2 border-l border-t border-blue-300 text-center text-sm sm:text-base whitespace-nowrap"
                     >
                       {playerRound.finishedPhase ? (
                         <input
@@ -55,14 +55,14 @@ const RoundList = () => {
                       ) : (
                         <span className="text-red-500 font-bold">X</span>
                       )}
-                      <span className="ml-2 text-blue-700">
+                      <span className="ml-1 sm:ml-2 text-blue-700">
                         {playerRound.score}
                       </span>
                     </td>
                   );
                 })}
                 {index === roundArray.length - 1 ? (
-                  <td className="py-2 border-t border-blue-300 text-center">
+                  <td className="px-1 py-2 border-t border-blue-300 text-center">
                     <button
                       type="button"
                       className="p-1 rounded hover:bg-blue-200 focus:outline-none"
@@ -79,10 +79,12 @@ const RoundList = () => {
             )
           )}
           <tr key="total" className="bg-blue-100">
-            <td className="text-blue-700 px-4 py-2 font-semibold">Total</td>
+            <td className="text-blue-700 px-2 sm:px-4 py-2 font-semibold text-sm sm:text-base">
+              Total
+            </td>
             {Object.entries(players).map(([playerName, player]) => (
               <td
-                className="border-l border-t border-blue-300 text-center text-blue-700 font-semibold"
+                className="border-l border-t border-blue-300 text-center text-blue-700 font-semibold text-sm sm:text-base"
                 key={`${playerName}-total`}
               >
                 {player.totalScore}
